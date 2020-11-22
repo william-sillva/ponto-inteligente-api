@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Optional;
 
 
-public class FuncionarServiceImpl implements FuncionarioService {
+public class FuncionarioServiceImpl implements FuncionarioService {
 
-    private static final Logger log = LoggerFactory.getLogger(FuncionarServiceImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(FuncionarioServiceImpl.class);
 
     @Autowired
     private FuncionarioRepository funcionarioRepository;

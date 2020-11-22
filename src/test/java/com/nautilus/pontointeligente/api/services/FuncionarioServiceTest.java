@@ -2,8 +2,7 @@ package com.nautilus.pontointeligente.api.services;
 
 import com.nautilus.pontointeligente.api.entities.Funcionario;
 import com.nautilus.pontointeligente.api.repositories.FuncionarioRepository;
-import com.nautilus.pontointeligente.api.services.impl.EmpresaServiceImpl;
-import com.nautilus.pontointeligente.api.services.impl.FuncionarServiceImpl;
+import com.nautilus.pontointeligente.api.services.impl.FuncionarioServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -61,6 +60,6 @@ public class FuncionarioServiceTest {
     }
 
     @Configuration
-    @Import(FuncionarServiceImpl.class)
+    @Import(FuncionarioServiceImpl.class)
     static class Config {}
 }

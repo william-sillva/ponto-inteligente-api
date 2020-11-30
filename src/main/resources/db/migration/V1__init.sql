@@ -22,7 +22,7 @@ create table funcionario (
 	qtd_horas_trabalho_dia float,
 	senha varchar(255) not null,
 	valor_hora decimal(19,2),
-	id_empresa bigint
+	empresa_id bigint
 		constraint func_empresa_id_fk
 			references empresa (id)
 );
@@ -37,8 +37,8 @@ create table lancamento (
 	descricao varchar(255),
 	localizacao varchar(255),
 	tipo varchar(255) not null,
-	id_funcionario bigint
-		constraint lanc_funci_id_fk
+	funcionario_id bigint
+		constraint lanc_func_id_fk
 			references funcionario (id)
 );
 

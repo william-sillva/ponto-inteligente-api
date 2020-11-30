@@ -42,11 +42,10 @@ public class Funcionario implements Serializable {
     private List<Lancamento> lancamentos;
 
     public Funcionario() {
-
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
         return id;
     }
@@ -64,7 +63,7 @@ public class Funcionario implements Serializable {
         this.nome = nome;
     }
 
-    @Column(name = "emial", nullable = false)
+    @Column(name = "email", nullable = false)
     public String getEmail() {
         return email;
     }
@@ -172,6 +171,11 @@ public class Funcionario implements Serializable {
     @Transient
     public Optional<Float> getQtdHorasTrabalhoDiaOpt() {
         return Optional.ofNullable(qtdHorasTrabalhoDia);
+    }
+
+    @Transient
+    public Optional<Float> getQtdHorasAlmocoOpt() {
+        return Optional.ofNullable(qtdHorasAlmoco);
     }
 
     @PreUpdate

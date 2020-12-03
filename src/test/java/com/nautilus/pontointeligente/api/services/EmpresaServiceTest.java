@@ -27,6 +27,10 @@ public class EmpresaServiceTest {
     @Autowired
     private EmpresaService empresaService;
 
+    @Configuration
+    @Import(EmpresaServiceImpl.class)
+    static class Config {}
+
     private static final String CNPJ = "54123698000100";
 
     @BeforeEach
@@ -46,8 +50,4 @@ public class EmpresaServiceTest {
         Empresa empresa = this.empresaService.persistir(new Empresa());
         Assertions.assertNotNull(empresa);
     }
-
-    @Configuration
-    @Import(EmpresaServiceImpl.class)
-    static class Config {}
 }

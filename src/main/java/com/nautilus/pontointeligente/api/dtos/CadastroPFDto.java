@@ -117,14 +117,14 @@ public class CadastroPFDto {
     public String toString() {
         return "CadastroPFDto [" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", senha='" + senha + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", cnpj='" + cnpj + '\'' +
+                ", nome='" + nome +
+                ", email='" + email +
+                ", senha='" + senha +
+                ", cpf='" + cpf +
+                ", cnpj='" + cnpj +
                 ", valorHora=" + valorHora +
                 ", qtdHorasTrabalhoDia=" + qtdHorasTrabalhoDia +
                 ", qtdHorasAlmoco=" + qtdHorasAlmoco +
-                ']';
+                "]";
     }
 }

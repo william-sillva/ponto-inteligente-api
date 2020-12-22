@@ -7,8 +7,10 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 /**
  * FIXME - Removendo Security SpringBoot
  * exclude = {SecurityAutoConfiguration.class}
+ * @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
  */
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+
+@SpringBootApplication()
 public class PontoInteligenteApplication {
 
     public static void main(String[] args) {

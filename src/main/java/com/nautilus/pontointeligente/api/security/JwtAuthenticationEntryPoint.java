@@ -22,7 +22,7 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
                          AuthenticationException authException) throws IOException {
 
         /*
-         * sendErro nao esta retornando mensagem customizada no response.
+         * sendError nao esta retornando mensagem customizada no response.
          */
 //        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Acesso negado. Você deve estar autenticado no sistema para acessar a URL solicitada.");
 

@@ -3,13 +3,10 @@ package com.nautilus.pontointeligente.api.security.controllers;
 import com.nautilus.pontointeligente.api.response.Response;
 import com.nautilus.pontointeligente.api.security.dto.JwtAuthenticationDto;
 import com.nautilus.pontointeligente.api.security.dto.TokenDto;
-import com.nautilus.pontointeligente.api.services.impl.JwtUserDetailsServiceImpl;
 import com.nautilus.pontointeligente.api.utils.JwtTokenUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -45,10 +42,6 @@ public class AuthenticationController {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    @Configuration
-    @Import(JwtUserDetailsServiceImpl.class)
-    static class Config {}
-
     /**
      * Gera e retorna um novo token JWT.
      *
@@ -61,7 +54,7 @@ public class AuthenticationController {
     public ResponseEntity<Response<TokenDto>> gerarTokenJwt (
             @Valid @RequestBody JwtAuthenticationDto authenticationDto, BindingResult result) throws AuthenticationException {
         
-        Response<TokenDto> response = new Response<TokenDto>();
+        Response<TokenDto> response = new Response<>();
         
         if (result.hasErrors()) {
             log.error("Erro validando lançamento: {}", result.getAllErrors());
@@ -91,7 +84,7 @@ public class AuthenticationController {
     @PostMapping(value = "/refresh")
     public ResponseEntity<Response<TokenDto>> gerarRefreshTokenJwt(HttpServletRequest request) {
         log.info("Gerando refresh token JWT.");
-        Response<TokenDto> response = new Response<TokenDto>();
+        Response<TokenDto> response = new Response<>();
         Optional<String> token = Optional.ofNullable(request.getHeader(TOKEN_HEADER));
         
         if (token.isPresent() && token.get().startsWith(BEARER_PREFIX)) {

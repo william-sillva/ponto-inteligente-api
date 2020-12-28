@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
  * @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
  */
 
-@SpringBootApplication()
+@SpringBootApplication
 public class PontoInteligenteApplication {
 
     public static void main(String[] args) {
